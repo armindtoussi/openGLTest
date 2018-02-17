@@ -44,6 +44,7 @@ public class Triangle {
             -0.5f, -0.5f, 0.0f, //bottom left
              0.5f, -0.5f, 0.0f  //bottom right
     };
+    
 
     float color [] = { 0.863f, 0.078f, 0.235f, 1.0f };
 
