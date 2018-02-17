@@ -3,6 +3,7 @@ package ca.bc.northvan.armintoussi.opengl2test;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
+import android.os.SystemClock;
 import android.util.Log;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -17,7 +18,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private Triangle mTriangle;
     private Square   mSquare;
-    private float mAngle;
+    private volatile float mAngle;
 
     private final float[] mMVPMatrix        = new float[16];
     private final float[] mProjectionMatrix = new float[16];
@@ -62,14 +63,14 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mViewMatrix, 0);
 
         //draw
-        mSquare.draw(mMVPMatrix);
+        //mSquare.draw(mMVPMatrix);
 
         // Create a rotation from the triangle
 
         // Use the following code to generate constant rotation.
         // Leave this code out when using TouchEvents.
-        // long time = SystemClock.uptimeMillis() % 4000L;
-        // float angle = 0.090f * ((int) time);
+        //long time   = SystemClock.uptimeMillis() % 4000L;
+        //float angle = 0.090f * ((int) time);
         Matrix.setRotateM(mRotationMatrix, 0, mAngle, 0, 0, 1.0f);
 
         // Combine the rotation matrix with the projection an camera view

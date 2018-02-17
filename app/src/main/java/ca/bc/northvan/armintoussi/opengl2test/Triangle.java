@@ -40,15 +40,13 @@ public class Triangle {
     static final int COORDS_PER_VERTEX = 3;
     static float triangleCoords[] = {
             //in counterclockwise order.
-             0.0f, 0.5f,  0.0f,  //top
-            -0.5f, -0.5f, 0.0f, //bottom left
-             0.5f, -0.5f, 0.0f  //bottom right
+            0.0f,  0.622008459f, 0.0f,   // top
+            -0.5f, -0.311004243f, 0.0f,   // bottom left
+            0.5f, -0.311004243f, 0.0f    // bottom right
     };
-    
+
 
     float color [] = { 0.863f, 0.078f, 0.235f, 1.0f };
-
-
 
 
     public Triangle() {
@@ -88,7 +86,7 @@ public class Triangle {
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(mProgram);
 
-        // get handle to vertext shader's vPosition member
+        // get handle to vertex shader's vPosition member
         mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition");
 
         // Enable a handle to the triangle vertices
